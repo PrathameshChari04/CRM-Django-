@@ -1,0 +1,102 @@
+{% extends 'section/main.html' %}
+
+{% block title %}
+Customer
+{% endblock title %}
+
+
+{% block content %}
+{% include 'section/nav.html' %}
+  <br>
+  <div class="row">
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center text-white mb-3" id="total-orders">
+            <div class="card-header">
+                <h5 class="card-title">Customer</h5>
+            </div>
+            <div class="card-body">
+                <a class="btn btn-secondary btn-sm btn-block" href="">Update Customer</a>
+                <a class="btn btn-danger btn-sm btn-block" href="">Delete Customer</a>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center text-white mb-3" id="total-orders">
+            <div class="card-header">
+                <h5 class="card-title">Contact Information</h5>
+            </div>
+            <div class="card-body " >
+            
+                <h6>Email : {{customer.email}}</h6>
+                <h6>Phone : {{customer.phone}}</h6>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center text-white mb-3" id="total-orders">
+            <div class="card-header">
+                <h5 class="card-title">Total Orders</h5>
+            </div>
+            <div class="card-body">
+                <h1 style="text-align: center padding: 10px">{{order_count}}</h1>
+            </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+  <div class="col">
+      <nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+  </nav>
+  </div>
+  </div>
+
+  <br>
+  <div class="row">
+        <div class="col-md card card-body">
+        <h5>Products</h5>
+        <hr>
+        <div class="card card-body">
+                    
+                    <table class="table table-sm">
+                        <tr>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Date Ordered</th>
+                            <th>Status</th>
+                            <th>Update</th>
+                            <th>Remove</th>
+                        </tr>
+
+                        {% for order in orders %}
+                            <tr>
+                            <td>{{order.product}}</td>
+                            <td>{{order.product.category}}</td>
+                            <td>{{order.date_created}}</td>
+                            <td>{{order.status}}</td>
+                            <td><a class="btn btn-outline-secondary btn-sm" href="">update</a></td>
+                            <td><a class="btn btn-outline-danger btn-sm " href="">remove</a></td>
+                            <tr>
+                        {% endfor %}
+                    </table>
+                    
+        </div>
+        </div>
+  </div>
+{% endblock content %}
+
+
