@@ -1,0 +1,23 @@
+{% extends 'section/main.html' %}
+
+{% block content %}
+{% include 'section/nav.html' %}
+<br>
+<div class="row">
+<div class="col">
+<div class="card center" >
+  <div class="card-body">
+    <h5 class="card-title">Create order</h5>
+        <form action="" methods="POST">
+
+        {% csrf_token %}
+
+        {{form}}
+   <br> <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+  </div>
+</div>
+</div>
+</div>
+
+{% endblock content %}

@@ -20,5 +20,6 @@ urlpatterns = [
     path('', views.index, name="home"),
     path('product/',views.products, name="product"),
     path('customer/<str:pk>/',views.customer, name="customer"),
+    path('createOrder/',views.createOrder, name="createOrder"),
 
 ]
