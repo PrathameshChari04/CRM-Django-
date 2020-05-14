@@ -37,9 +37,7 @@ def createOrder(request):
         if form.is_valid():
             form.save()
             return redirect('/')
-
-    
-    context = {'form':form}
+    context = {'form' : form}
     return render(request,'section/order_form.html',context)
 
     
